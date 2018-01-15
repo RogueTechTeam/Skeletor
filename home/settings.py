@@ -90,6 +90,23 @@ DATABASES = {
     }
 }
 
+'''
+# Postgres
+DATABASES = {
+    'default': {
+        'CONN_MAX_AGE': 0,
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'DB_NAME',
+        'USER': 'DB_USER',
+        'PASSWORD': 'DB_USER_PASSWORD',
+        'HOST': 'DB_HOST',
+        'PORT': 'DB_PORT'
+    }
+}
+
+DATABASE_URL = 'DB_HOST:DB_PORT'
+'''
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
