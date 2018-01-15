@@ -1,0 +1,54 @@
+{% extends "ex_static.html" %}
+{% load staticfiles %}
+
+{% block all %}
+
+<!DOCTYPE html>
+<html class="">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title></title>
+	<!-- Loading Bootstrap -->
+
+	<link href="{{ ex_static }}style/bootstrap.css{{v}}" rel="stylesheet">
+	<link href="{{ ex_static }}style/flat-ui.css{{v}}" rel="stylesheet">
+	<link href="{{ ex_static }}style/font-awesome.min.css{{v}}" rel="stylesheet">
+	<script type="text/javascript" src="{{ex_static}}script/jquery-3.1.1.min.js{{v}}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="{{ ex_static }}style/style.css{{v}}">
+
+	<script>
+	</script>
+	{% block style %}
+	{% endblock %}
+</head>
+
+<body>
+{% block content %}
+{% endblock %}
+
+<div class='cover'>
+    <div class="cover-outer" onclick="popCoverContent()"></div>
+
+    <div class="floating-cover-content" style=""></div>
+
+    <div class='cover-inner'>
+        <div class='cover-content'>
+        </div>
+        <div class="close btn btn-danger" onclick="popCoverContent()"><span class="fa fa-times"></span></div>
+        {% csrf_token %}
+    </div>
+
+</div>
+
+<script src="{{ ex_static }}script/script.js{{v}}"></script>
+{% block script %}
+{% endblock %}
+
+</body>
+</html>
+
+{% endblock %}
