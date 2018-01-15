@@ -37,7 +37,7 @@ class User(AbstractBaseUser):
     
     type = models.CharField(max_length=7, choices = (('User','User'),('Parent','Parent')), default='User')
     
-    parent = models.ForeignKey('User', related_name = 'children', blank=True, null=True)
+    parent = models.ForeignKey('User', related_name = 'children', blank=True, null=True, on_delete=models.CASCADE)
     
     newsletter = models.BooleanField(_('newsletter'), help_text=_('Subscribe to newsletter.'), default=False)
     invited_others = models.BooleanField(_('invited others'), default=False)
